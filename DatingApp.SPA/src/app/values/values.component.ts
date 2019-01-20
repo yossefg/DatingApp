@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Value } from './value.module';
 
 @Component({
   selector: 'app-values',
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./values.component.css']
 })
 export class ValuesComponent implements OnInit {
-  values: any;
+  values: Value[];
   constructor(private http: HttpClient) {
  
    }
@@ -17,7 +18,7 @@ export class ValuesComponent implements OnInit {
   }
 getValues(){
   this.http.get('https://localhost:5001/api/values').subscribe((response) => {
-      this.values = response;
+      this.values = response as Value[];
       console.log( this.values);
   }, error => {
     console.log(error);
