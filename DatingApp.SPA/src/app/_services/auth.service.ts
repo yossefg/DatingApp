@@ -34,11 +34,10 @@ constructor(private http: HttpClient) { }
     );
 
   }
-  loggedIn(){
+  loggedIn() {
     const token = localStorage.getItem('token');
     return  !this.jwtHelper.isTokenExpired(token);
   }
-  
 }
 
 
