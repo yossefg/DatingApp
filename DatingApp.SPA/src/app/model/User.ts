@@ -8,11 +8,11 @@ export interface User {
     created: Date;
     lastActive: Date;
     photoUrl: string;
-    city: string;
-    country: string;
-    interests?: string;
-    introduction?: string;
-    lookingFor?: string;
+    City: string;
+    Country: string;
+    Interests?: string;
+    Introduction?: string;
+    LookingFor?: string;
     photos?: Photo[];
 }
 

@@ -13,7 +13,7 @@ export class MemberDetailResolver implements Resolve<User> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): User | Observable<User> | Promise<User> {
        return this._userSerivce.getUser(route.params['id']).pipe(
            catchError(error => {
-               this.alertify.error('problem retriving user details');
+               this.alertify.error('problem retriving user details MemberDetailResolver');
                this.router.navigate(['/members']);
                return of(null);
            } )
